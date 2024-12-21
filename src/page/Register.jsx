@@ -22,11 +22,6 @@ const Register = () => {
             setErrorMessage('password must have an Uppercase,a Lowercase & must be at least 6 character.')
             return;
         }
-
-        const newUser = {
-            name: name,
-            email: email,
-        }
         createNewUser(email, password)
             .then(result => {
                 const user = result.user;
@@ -44,52 +39,20 @@ const Register = () => {
                     .catch(error => {
                         console.log(error)
                     })
-                // save new user info to the database
-                fetch('https://chill-gamer-server-mocha.vercel.app/users', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(newUser)
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data)
-                    })
-            })
-            .catch(error => {
-                console.log(error.message)
-            })
-    }
+            })           
+        }
 
     const handleGoogleRegister = () => {
         signInWithGoogle()
             .then(result => {
-                const displayName = result.user.displayName;
-                const email = result.user.email;
-                const userData = {
-                    displayName: displayName,
-                    email: email,
-                }
+                console.log(result.user)
                 Swal.fire({
                     title: 'success!',
                     text: 'Register is successfully',
                     icon: 'success',
                     confirmButtonText: 'ok'
                 })
-                navigate('/')
-                // save new user info to the database
-                fetch('https://chill-gamer-server-mocha.vercel.app/users', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(userData)
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data)
-                    })
+                navigate('/')                    
             })
             .catch(error => {
                 console.log(error.message)

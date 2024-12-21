@@ -1,9 +1,13 @@
+import { Outlet } from "react-router-dom";
 import Navber from "../component/Navber";
+import Footer from "../component/Footer";
 
 const Mainlayout = () => {
     return (
-        <div>
+        <div className="container mx-auto">
             <Navber></Navber>
+            <Outlet></Outlet>
+            <Footer></Footer>
         </div>
     );
 };

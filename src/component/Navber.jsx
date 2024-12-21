@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../authprovider/AuthProvider";
 
 const Navber = () => {
-    const {user} = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     return (
         <div className="navbar bg-green-200">
             <div className="navbar-start">
@@ -27,25 +27,26 @@ const Navber = () => {
                         tabIndex={0}
                         className="menu font-bold text-lg menu-sm dropdown-content bg-base-100 rounded-box z-[50] mt-3 w-52 p-2 shadow">
                         <NavLink to='/'><li><a>Home</a></li></NavLink>
-                        <NavLink to='/'><li><a>All Reviews</a></li></NavLink>
-                        <NavLink to='/'><li><a>Add Review</a></li></NavLink>
-                        <NavLink to='/'><li><a>My Reviews</a></li></NavLink>
-                        <NavLink to='/'><li><a>Game WatchList</a></li></NavLink>
+                        <NavLink to='/addblog'><li><a>Add Blog</a></li></NavLink>
+                        <NavLink to='/allblog'><li><a>All blogs</a></li></NavLink>
+                        <NavLink to='/featureblog'><li><a>Featured Blogs</a></li></NavLink>
+                        <NavLink to='/wishlist'><li><a>Wishlist</a></li></NavLink>
                     </ul>
                 </div>
                 <Link to='/'>
-                    <a className="cursor-pointer">
-                        <img className="w-20" src={logo} alt="" />
+                    <a className="cursor-pointer flex gap-2 items-center">
+                        <img className="w-12" src={logo} alt="" />
+                        <h2 className="text-xl text-blue-900 font-bold">The Blog Haven</h2>
                     </a>
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 font-bold">
                     <NavLink to='/'><li><a>Home</a></li></NavLink>
-                    <NavLink to='/'><li><a>All Reviews</a></li></NavLink>
-                    <NavLink to='/'><li><a>Add Review</a></li></NavLink>
-                    <NavLink to='/'><li><a>My Reviews</a></li></NavLink>
-                    <NavLink to='/'><li><a>Game WatchList</a></li></NavLink>
+                    <NavLink to='/addblog'><li><a>Add Blog</a></li></NavLink>
+                    <NavLink to='/allblog'><li><a>All blogs</a></li></NavLink>
+                    <NavLink to='/featureblog'><li><a>Featured Blogs</a></li></NavLink>
+                    <NavLink to='/wishlist'><li><a>Wishlist</a></li></NavLink>
                 </ul>
             </div>
 
@@ -62,7 +63,10 @@ const Navber = () => {
                             <Link onClick={logOut}><button className="btn">LogOut</button></Link>
                         </div>
                         :
-                        <Link to='/login'><button className="btn">Login</button></Link>
+                        <div className="flex gap-4">
+                            <Link to='/login'><button className="btn">Login</button></Link>
+                            <Link to='/register'><button className="btn">Register</button></Link>
+                        </div>
                 }
 
             </div>
