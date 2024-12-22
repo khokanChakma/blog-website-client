@@ -5,7 +5,6 @@ import { AuthContext } from "../authprovider/AuthProvider";
 
 const Navber = () => {
     const { user, logOut } = useContext(AuthContext);
-    console.log(user?.photoURL)
     return (
         <div className="navbar ">
             <div className="navbar-start">
