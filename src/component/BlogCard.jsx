@@ -5,7 +5,7 @@ const BlogCard = ({ blog }) => {
     return (
         <div>
             <div
-                className='w-full px-4 py-3 bg-white rounded-md shadow-md hover:scale-[1.05] transition-all'
+                className='w-full px-4 py-3 bg-white rounded-md shadow-md'
             >
                 <div className="card card-compact bg-base-100 w-full p-4 border shadow-xl">
                     <figure>
