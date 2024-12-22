@@ -42,11 +42,11 @@ const Navber = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 font-bold">
-                    <NavLink to='/'><li><a>Home</a></li></NavLink>
-                    <NavLink to='/addblog'><li><a>Add Blog</a></li></NavLink>
-                    <NavLink to='/allblog'><li><a>All blogs</a></li></NavLink>
-                    <NavLink to='/featureblog'><li><a>Featured Blogs</a></li></NavLink>
-                    <NavLink to='/wishlist'><li><a>Wishlist</a></li></NavLink>
+                    <NavLink className='rounded' to='/'><li><a>Home</a></li></NavLink>
+                    <NavLink className='rounded' to='/addblog'><li><a>Add Blog</a></li></NavLink>
+                    <NavLink className='rounded' to='/allblog'><li><a>All blogs</a></li></NavLink>
+                    <NavLink className='rounded' to='/featureblog'><li><a>Featured Blogs</a></li></NavLink>
+                    <NavLink className='rounded' to='/wishlist'><li><a>Wishlist</a></li></NavLink>
                 </ul>
             </div>
 
