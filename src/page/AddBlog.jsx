@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../authprovider/AuthProvider";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const AddBlog = () => {
     const { user } = useContext(AuthContext)
@@ -15,15 +16,26 @@ const AddBlog = () => {
         console.table({ title, imgURL, category, short_description, long_description })
         const formData = { 
             title, 
+            writer: {
+                name: user?.displayName,
+                email: user?.email,
+                photo: user?.photoURL
+        
+              }, 
             imgURL, 
             category, 
             short_description, 
-            long_description 
+            long_description,
         }
         // make a post request
         try {
             const {data} = await axios.post(`${import.meta.env.VITE_API_URL}/add-blogs`, formData)
-            // form.reset();
+            form.reset();
+            Swal.fire({
+                title: "successfully added blog",
+                icon: "success",
+                draggable: true
+              });
             // toast.success('Data added Successfully!!!')
             // navigate('/my-posted-jobs')
             console.log(data)
@@ -50,6 +62,7 @@ return (
                             id='job_title'
                             name='title'
                             type='text'
+                            required
                             className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
                         />
                     </div>
@@ -62,6 +75,7 @@ return (
                             id='emailAddress'
                             type='url'
                             name='image_url'
+                            required
                             className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
                         />
                     </div>
@@ -74,6 +88,7 @@ return (
                             name='category'
                             id='category'
                             className='border p-2 rounded-md'
+                            required
                         >
                             <option value='Travel'>Travel</option>
                             <option value='Food'>Food</option>
@@ -89,6 +104,7 @@ return (
                             id='min_price'
                             name='short_description'
                             type='text'
+                            required
                             className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
                         />
                     </div>
@@ -101,6 +117,7 @@ return (
                         className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
                         name='long_description'
                         id='description'
+                        required
                     ></textarea>
                 </div>
                 <div className='flex justify-end mt-6'>

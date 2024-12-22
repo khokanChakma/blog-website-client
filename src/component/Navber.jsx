@@ -5,8 +5,9 @@ import { AuthContext } from "../authprovider/AuthProvider";
 
 const Navber = () => {
     const { user, logOut } = useContext(AuthContext);
+    console.log(user?.photoURL)
     return (
-        <div className="navbar bg-gray-300">
+        <div className="navbar ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
