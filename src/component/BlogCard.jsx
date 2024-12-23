@@ -1,15 +1,28 @@
 import axios from "axios";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../authprovider/AuthProvider";
 
 const BlogCard = ({ blog }) => {
+    const {user} = useContext(AuthContext);
     const { title, short_description, imgURL, category, _id } = blog;
+
+    const wishData = {
+        title,
+        short_description,
+        imgURL,
+        category,
+        email: user?.email,
+        blog_id: _id,
+    }
+
 
     const handleWishlist =async () => {
         try {
-            const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/add-blogs`, formData)
-            form.reset();
+            const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/add-wishlist`, wishData)
             Swal.fire({
-                title: "successfully added blog",
+                title: "successfully added in wishlist",
                 icon: "success",
                 draggable: true
             });

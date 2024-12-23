@@ -34,7 +34,8 @@ const BlogDetails = () => {
         // send comment data in server
         try {
             const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/add-comment`, commentData)
-            form.reset();
+            // form.reset();
+            fetchcomments();
             Swal.fire({
                 title: "successfully added comment",
                 icon: "success",
@@ -48,12 +49,12 @@ const BlogDetails = () => {
 
     //get fetch the comments 
     useEffect(() => {
-        const fetchcomments = async () => {
-            const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/get-comment?blog_id=${_id}`)
-            setComments(data);
-        }
         fetchcomments();
     }, [_id])
+    const fetchcomments = async () => {
+        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/get-comment?blog_id=${_id}`)
+        setComments(data);
+    }
 
 
 
