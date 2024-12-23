@@ -10,6 +10,7 @@ import FeaturedBlog from "../page/FeaturedBlog";
 import WishList from "../page/WishList";
 import PrivateRout from "./PrivateRout";
 import BlogDetails from "../component/BlogDetails";
+import Update from "../component/Update";
 
 const Router = createBrowserRouter([
     {
@@ -43,12 +44,16 @@ const Router = createBrowserRouter([
             },
             {
                 path: '/wishlist',
-                element: <WishList></WishList>
+                element: <PrivateRout><WishList></WishList></PrivateRout>
             },
             {
                 path: '/blogdetails/:id',
                 element: <BlogDetails></BlogDetails>,
-                // loader: ({params}) => fetch(`http://localhost:5000/all-blogs/${params.id}`)
+            },
+            {
+                path: '/update/:id',
+                element: <PrivateRout><Update></Update></PrivateRout>,
+                loader: ({params})=> fetch(`http://localhost:5000/all-blogs/${params.id}`)
             },
             
         ]

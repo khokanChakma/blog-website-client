@@ -13,7 +13,6 @@ const AddBlog = () => {
         const category = form.category.value;
         const short_description = form.short_description.value;
         const long_description = form.long_description.value;
-        console.table({ title, imgURL, category, short_description, long_description })
         const formData = { 
             title, 
             writer: {
@@ -36,8 +35,6 @@ const AddBlog = () => {
                 icon: "success",
                 draggable: true
               });
-            // toast.success('Data added Successfully!!!')
-            // navigate('/my-posted-jobs')
             console.log(data)
         }
         catch (err) {

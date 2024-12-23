@@ -1,7 +1,25 @@
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 const BlogCard = ({ blog }) => {
-    const {title,short_description,imgURL,category,_id} = blog;
+    const { title, short_description, imgURL, category, _id } = blog;
+
+    const handleWishlist =async () => {
+        try {
+            const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/add-blogs`, formData)
+            form.reset();
+            Swal.fire({
+                title: "successfully added blog",
+                icon: "success",
+                draggable: true
+            });
+            console.log(data)
+        }
+        catch (err) {
+            console.log(err.message);
+        }
+    }
+
     return (
         <div>
             <div
@@ -20,7 +38,7 @@ const BlogCard = ({ blog }) => {
                         <p className="text-xl"><span className="text-xl font-bold">Short Description:</span>{short_description}</p>
                         <div className="card-actions">
                             <Link to={`/blogdetails/${_id}`} className="btn btn-primary">Details</Link>
-                            <button className="btn">Wishlist</button>
+                            <button onClick={handleWishlist} className="btn">Wishlist</button>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { AuthContext } from "../authprovider/AuthProvider";
 import Swal from "sweetalert2";
 import Comment from "./Comment";
@@ -8,7 +8,7 @@ import Comment from "./Comment";
 const BlogDetails = () => {
     const { user } = useContext(AuthContext);
     const [blog, setBlog] = useState({})
-    const [comments,setComments] = useState([])
+    const [comments, setComments] = useState([])
     console.log(comments);
     const { title, short_description, long_description, imgURL, category, writer, _id } = blog
     const { id } = useParams()
@@ -69,10 +69,15 @@ const BlogDetails = () => {
                     <h4><span className="text-xl font-semibold">Category: </span> {category}</h4>
                     <h4><span className="text-xl font-semibold">Short Description: </span> {short_description}</h4>
                     <h4><span className="text-xl font-semibold">Long description : </span> {long_description}</h4>
-                    <h4><span className="text-xl font-semibold">Writer Name: </span> {writer?.name}</h4>
-
+                    <div>
+                        {
+                            user?.email === writer?.email ? <Link to={`/update/${_id}`}><button className="btn">Edit</button></Link>: ''
+                        }
+                        
+                    </div>
                 </div>
             </div>
+
             {/* comment section */}
             {
                 user?.email === writer?.email ? '' : (<div className="w-10/12 mx-auto my-6">
@@ -94,7 +99,7 @@ const BlogDetails = () => {
             }
             <div className="my-6 w-10/12 mx-auto">
                 {
-                    comments?.map(cmt=> <Comment key={cmt._id} cmt={cmt}></Comment>)
+                    comments?.map(cmt => <Comment key={cmt._id} cmt={cmt}></Comment>)
                 }
             </div>
         </div>
