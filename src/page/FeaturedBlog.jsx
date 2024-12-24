@@ -16,8 +16,8 @@ const FeaturedBlog = () => {
         featureAllJobs();
     }, [])
     return (
-        <div>
-            <FeatureTable></FeatureTable>
+        <div className="mt-6">
+            <FeatureTable sortedData={sortedData}></FeatureTable>
         </div>
     );
 };
