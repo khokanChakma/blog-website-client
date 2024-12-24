@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../authprovider/AuthProvider";
+import axios from "axios";
 
 const Login = () => {
     const { userLogin, setUser, signInWithGoogle } = useContext(AuthContext);
@@ -31,7 +32,7 @@ const Login = () => {
                 setErrorMessage('User email or Password doesn,t match. please try again')
             })
     }
-    const handleGoogleLogin = () => {
+    const handleGoogleLogin =async () => {
         signInWithGoogle()
             .then(result => {
                 Swal.fire({

@@ -81,7 +81,7 @@ const BlogDetails = () => {
 
             {/* comment section */}
             {
-                user?.email === writer?.email ? '' : (<div className="w-10/12 mx-auto my-6">
+                user?.email === writer?.email || !user ? '' : (<div className="w-10/12 mx-auto my-6">
                     <form onSubmit={handleComment}>
                         <div className='flex flex-col gap-2 mt-4'>
                             <label className='text-gray-700 ' htmlFor='description'>

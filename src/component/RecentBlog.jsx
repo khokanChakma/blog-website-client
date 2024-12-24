@@ -4,7 +4,6 @@ import BlogCard from "./BlogCard";
 
 const RecentBlog = () => {
     const [blogs,setBlogs] = useState([]);
-    console.log(blogs)
     useEffect(() => {
         const fetchAllJobs = async () => {
             const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/recent-blogs`)

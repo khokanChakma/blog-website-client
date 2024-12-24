@@ -11,19 +11,19 @@ const WishList = () => {
     }, [user])
 
     const fetchWishlist = async () => {
-        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/get-wishlist?email=${user?.email}`)
+        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/get-wishlist?email=${user?.email}`, { withCredentials: true })
         setWishlists(data);
     }
 
-    const handleRemove = async(id) => {
-        try{
-            const {data} = await axios.delete(`${import.meta.env.VITE_API_URL}/remove-wishlist/${id}`)
+    const handleRemove = async (id) => {
+        try {
+            const { data } = await axios.delete(`${import.meta.env.VITE_API_URL}/remove-wishlist/${id}`)
             console.log(data)
             fetchWishlist();
-          }
-          catch(err){
+        }
+        catch (err) {
             console.log(err.message)
-          }
+        }
     }
 
     return (
@@ -53,7 +53,7 @@ const WishList = () => {
                                     <Link to={`/blogdetails/${wishlist?.blog_id}`}>
                                         <button className="btn">Details</button>
                                     </Link>
-                                    <button onClick={()=>handleRemove(wishlist?._id)} className="btn">Remove</button>
+                                    <button onClick={() => handleRemove(wishlist?._id)} className="btn">Remove</button>
                                 </div>
                             </td>
                         </tr>)
