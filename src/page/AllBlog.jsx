@@ -5,14 +5,15 @@ import BlogCard from "../component/BlogCard";
 const AllBlog = () => {
     const [blogs, setBlogs] = useState([])
     const [filter,setFilter] = useState('');
+    const [search,setSearch] = useState('');
     console.log(filter)
     useEffect(() => {
         const fetchAllJobs = async () => {
-            const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/all-blogs?filter=${filter}`)
+            const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/all-blogs?filter=${filter}&search=${search}`)
             setBlogs(data);
         }
         fetchAllJobs();
-    }, [filter])
+    }, [filter,search])
 
     return (
         <div>
@@ -38,11 +39,11 @@ const AllBlog = () => {
                     <input
                         className='px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent'
                         type='text'
-                        // onChange={(e) => setSearch(e.target.value)}
+                        onChange={(e) => setSearch(e.target.value)}
                         // value={search}
                         name='search'
-                        placeholder='Enter Job Title'
-                        aria-label='Enter Job Title'
+                        placeholder='Enter blog Title'
+                        aria-label='Enter blog Title'
                     />
 
                     <button className='px-1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none'>
