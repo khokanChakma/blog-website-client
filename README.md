@@ -32,4 +32,4 @@ github link client: https://github.com/programming-hero-web-course2/b10a11-clien
 
 github link server : https://github.com/programming-hero-web-course2/b10a11-server-side-khokan784
 
-Live link: 
+Live link: https://rainbow-creponne-584031.netlify.app/
