@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../authprovider/AuthProvider";
+import 'animate.css';
 
 const BlogCard = ({ blog }) => {
     const {user} = useContext(AuthContext);
@@ -34,7 +35,7 @@ const BlogCard = ({ blog }) => {
     }
 
     return (
-        <div>
+        <div className="animate__animated animate__slideInUp">
             <div
                 className='w-full bg-white shadow-md'
             >
@@ -50,8 +51,8 @@ const BlogCard = ({ blog }) => {
                         <p className="text-xl"><span className="text-xl font-bold">Category : </span>{category}</p>
                         <p className="text-xl"><span className="text-xl font-bold">Short Description:</span>{short_description}</p>
                         <div className="card-actions">
-                            <Link to={`/blogdetails/${_id}`} className="btn btn-primary">Details</Link>
-                            <button onClick={handleWishlist} className="btn">Wishlist</button>
+                            <Link to={`/blogdetails/${_id}`} className="btn btn-primary bg-[#70009a] border-none">Details</Link>
+                            <button onClick={handleWishlist} className="btn btn-primary bg-[#de6800] border-none">Wishlist</button>
                         </div>
                     </div>
                 </div>

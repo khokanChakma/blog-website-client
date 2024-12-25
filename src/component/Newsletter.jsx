@@ -1,9 +1,9 @@
 
-const Newsletter = ({handleSubmit}) => {
-    
+const Newsletter = ({ handleSubmit }) => {
+
     return (
-        <div className="md:w-6/12 mx-auto my-12">
-            <h2 className="text-2xl font-semibold">Newsletter</h2>
+        <div className="md:w-5/12 mx-auto">
+            <h2 className="text-2xl font-bold text-white text-center">Newsletter</h2>
             <div>
                 <form onSubmit={handleSubmit}>
                     <label className="input input-bordered flex items-center gap-2 my-4">
@@ -19,7 +19,9 @@ const Newsletter = ({handleSubmit}) => {
                         </svg>
                         <input type="email" name="email" className="grow" placeholder="Email" required />
                     </label>
-                    <button className="btn btn-primary">Submit</button>
+                    <div className="flex justify-center">
+                        <button className="btn btn-primary">Submit</button>
+                    </div>
                 </form>
             </div>
         </div>

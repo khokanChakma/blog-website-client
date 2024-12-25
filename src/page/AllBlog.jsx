@@ -17,7 +17,7 @@ const AllBlog = () => {
 
     return (
         <div>
-            <div className='flex flex-col md:flex-row justify-center items-center gap-5 '>
+            <div className='flex flex-col md:flex-row justify-center items-center gap-5 mt-10'>
                 <div>
                     <select
                         name='category'

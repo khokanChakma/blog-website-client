@@ -22,8 +22,8 @@ const Banner = () => {
                 </div>
                 <div className='flex-1'>
                     <motion.h1 className="text-5xl font-bold"
-                        animate={{ color: ['#0185c7 ', '#33ffe3', '#ff6133'] }}
-                        transition={{ duration: 5, repeat: Infinity }}
+                        animate={{ color: ['#0185c7', '#797b7b', '#ff6133','#0185c7'] }}
+                        transition={{ duration: 2, repeat: Infinity }}
                     >Discover Stories That Inspire & Inform</motion.h1>
                     <p className="py-6">Dive into a world of engaging blogs, insightful articles, and captivating stories. Stay informed, entertained, and inspired every day!</p>
                 </div>
