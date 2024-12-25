@@ -2,7 +2,7 @@
 const Newsletter = ({handleSubmit}) => {
     
     return (
-        <div>
+        <div className="md:w-6/12 mx-auto my-12">
             <h2 className="text-2xl font-semibold">Newsletter</h2>
             <div>
                 <form onSubmit={handleSubmit}>

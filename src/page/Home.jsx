@@ -20,10 +20,8 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <div className="flex flex-col md:flex-row my-10">
-                <div className="w-full md:w-9/12"><RecentBlog></RecentBlog></div>
-                <div className="w-full md:w-3/12 bg-green-200 p-4 rounded"><Newsletter handleSubmit={handleSubmit}></Newsletter></div>
-            </div>
+            <RecentBlog></RecentBlog>
+            <Newsletter handleSubmit={handleSubmit}></Newsletter>
             
         </div>
     );

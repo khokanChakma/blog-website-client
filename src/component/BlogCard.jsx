@@ -36,9 +36,9 @@ const BlogCard = ({ blog }) => {
     return (
         <div>
             <div
-                className='w-full px-4 py-3 bg-white rounded-md shadow-md'
+                className='w-full bg-white shadow-md'
             >
-                <div className="card card-compact bg-base-100 w-full p-4 border shadow-xl">
+                <div className="card card-compact bg-base-100 h-[600px] w-full p-4 border shadow-xl">
                     <figure>
                         <img
                             className='h-[300px]'
