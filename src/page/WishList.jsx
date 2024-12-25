@@ -18,7 +18,6 @@ const WishList = () => {
     const handleRemove = async (id) => {
         try {
             const { data } = await axios.delete(`${import.meta.env.VITE_API_URL}/remove-wishlist/${id}`)
-            console.log(data)
             fetchWishlist();
         }
         catch (err) {

@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../authprovider/AuthProvider";
 import 'animate.css';
 
 const BlogCard = ({ blog }) => {
+    const navigate = useNavigate();
     const {user} = useContext(AuthContext);
     const { title, short_description, imgURL, category, _id } = blog;
 
@@ -27,7 +28,7 @@ const BlogCard = ({ blog }) => {
                 icon: "success",
                 draggable: true
             });
-            console.log(data)
+            navigate('/wishlist');
         }
         catch (err) {
             console.log(err.message);

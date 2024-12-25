@@ -9,7 +9,6 @@ const BlogDetails = () => {
     const { user } = useContext(AuthContext);
     const [blog, setBlog] = useState({})
     const [comments, setComments] = useState([])
-    console.log(comments);
     const { title, short_description, long_description, imgURL, category, writer, _id } = blog
     const { id } = useParams()
     useEffect(() => {
@@ -72,7 +71,7 @@ const BlogDetails = () => {
                     <h4><span className="text-xl font-semibold">Long description : </span> {long_description}</h4>
                     <div>
                         {
-                            user?.email === writer?.email ? <Link to={`/update/${_id}`}><button className="btn">Edit</button></Link>: ''
+                            user?.email === writer?.email ? <Link to={`/update/${_id}`}><button className="btn">Update</button></Link>: ''
                         }
                         
                     </div>

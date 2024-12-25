@@ -1,8 +1,35 @@
-# React + Vite
+<h2>Project Name:</h2>
+ Blog Website
+<h2>Assignment Category: 5</h2>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+<h2>Description The Project Purpose: </h2>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Welcome to the Blog Website Development project! We're seeking a talented Front-End Developer to help bring our next-generation blog website to life. This exciting project will allow you to design and implement beautiful, responsive web pages, collaborating with designers and back-end developers. The project involves creating a dynamic, user-friendly experience for visitors, using modern technologies like React and Firebase.
+ 
+
+<h2>key features of the project: </h2>
+
+- categorise details by clicked view Explore Details .
+- Authentication System .
+- Add Blogs.
+- My Reviews Page.
+- Banner with Hero Banner .
+
+<h2>Npm packages:</h2>
+<ul>
+    <li> React router</li>
+    <li> Express</li>
+    <li> MongoDB</li>
+    <li>sweetalert 2</li>
+    <li> React-data-table</li>
+    <li>Framer Motion</li>
+    <li>React-icons</li>
+    <li>JWT authentication</li>
+</ul>       
+
+github link client: https://github.com/programming-hero-web-course2/b10a11-client-side-khokan784
+
+github link server : https://github.com/programming-hero-web-course2/b10a11-server-side-khokan784
+
+Live link: 

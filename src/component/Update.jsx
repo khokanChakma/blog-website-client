@@ -30,7 +30,6 @@ const Update = () => {
                 icon: "success",
                 draggable: true
             });
-            console.log(data)
         }
         catch (err) {
             console.log(err.message);

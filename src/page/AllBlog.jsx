@@ -6,7 +6,6 @@ const AllBlog = () => {
     const [blogs, setBlogs] = useState([])
     const [filter,setFilter] = useState('');
     const [search,setSearch] = useState('');
-    console.log(filter)
     useEffect(() => {
         const fetchAllJobs = async () => {
             const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/all-blogs?filter=${filter}&search=${search}`)
