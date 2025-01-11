@@ -26,7 +26,7 @@ const WishList = () => {
     }
 
     return (
-        <div className="">
+        <div className="min-h-screen">
             <table className="md:table">
                 {/* head */}
                 <thead>
@@ -43,7 +43,7 @@ const WishList = () => {
                         wishlists.map((wishlist, index) => <tr key={wishlist?._id}>
                             <th>{index + 1}</th>
                             <td>
-                                <img className="w-24 h-20 rounded-xl" src={wishlist?.imgURL} alt="" />
+                                <img className="w-24 h-20 rounded-xl object-cover" src={wishlist?.imgURL} alt="" />
                             </td>
                             <td>{wishlist?.title}</td>
                             <td>{wishlist?.category}</td>

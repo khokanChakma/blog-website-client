@@ -6,19 +6,19 @@ import blog3 from '../assets/blog 3.jpg'
 const Banner = () => {
 
     return (
-        <div className="hero bg-base-200 min-h-96 bg-cover bg-center mt-4 rounded" style={{ backgroundImage: `url(${banner})` }}>
+        <div className="hero bg-base-200 md:h-[330px] bg-cover bg-center" style={{ backgroundImage: `url(${banner})` }}>
             <div className="hero-content w-full flex-col lg:flex-row-reverse">
                 <div className='flex-1'>
                     <motion.img
                         src={blog2}
-                        animate={{ y: [0, 50, 0] }}
+                        animate={{ y: [0, 30, 0] }}
                         transition={{ duration: 10, repeat: Infinity }}
-                        className="max-w-sm w-64 rounded border-2 border-blue-400 shadow-2xl" />
+                        className="max-w-sm w-64 h-32 rounded border-2 border-blue-400 shadow-2xl" />
                     <motion.img
                         src={blog3}
-                        animate={{ x: [20, 70, 20] }}
+                        animate={{ x: [20, 0, 20] }}
                         transition={{ duration: 10, repeat: Infinity }}
-                        className="max-w-sm w-64 rounded border-2 border-blue-400 shadow-2xl" />
+                        className="max-w-sm w-64 h-32 rounded border-2 border-blue-400 shadow-2xl" />
                 </div>
                 <div className='flex-1'>
                     <motion.h1 className="text-5xl font-bold"

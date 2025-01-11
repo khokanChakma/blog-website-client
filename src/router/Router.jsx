@@ -11,6 +11,7 @@ import WishList from "../page/WishList";
 import PrivateRout from "./PrivateRout";
 import BlogDetails from "../component/BlogDetails";
 import Update from "../component/Update";
+import Contact from "../component/Contact";
 
 const Router = createBrowserRouter([
     {
@@ -45,6 +46,10 @@ const Router = createBrowserRouter([
             {
                 path: '/wishlist',
                 element: <PrivateRout><WishList></WishList></PrivateRout>
+            },
+            {
+                path: '/contact',
+                element: <Contact></Contact>
             },
             {
                 path: '/blogdetails/:id',

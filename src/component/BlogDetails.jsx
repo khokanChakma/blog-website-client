@@ -62,7 +62,7 @@ const BlogDetails = () => {
             <h2 className="text-3xl font-bold text-center py-4">Blog Details</h2>
             <div className="flex flex-col lg:flex-row gap-6 p-6 bg-base-200 rounded-xl shadow-xl w-10/12 mx-auto">
                 <img
-                    className="w-96 rounded-xl"
+                    className="w-96 md:h-[300px] object-cover rounded-xl"
                     src={imgURL} />
                 <div className="space-y-2">
                     <h1 className="text-4xl font-bold">{title}</h1>

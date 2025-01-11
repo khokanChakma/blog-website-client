@@ -21,7 +21,7 @@ const FeatureTable = ({sortedData}) => {
     ]
     const data = sortedData
     return (
-        <div className='my-6'>
+        <div className='my-6 min-h-screen'>
             <DataTable columns={columns} data={data}></DataTable>
         </div>
     );

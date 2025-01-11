@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import BlogCard from "./BlogCard";
+import SectionTitle from "./SectionTitle";
 
 const RecentBlog = () => {
     const [blogs,setBlogs] = useState([]);
@@ -13,11 +14,13 @@ const RecentBlog = () => {
     }, [])
     return (
         <div>
-            <div className='grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 lg:grid-cols-3'>
+            <SectionTitle heading={'Recent posted'}></SectionTitle>
+            <div className='grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-4'>
                 {
                     blogs.map(blog => <BlogCard key={blog._id} blog={blog}></BlogCard>)
                 }
             </div>
+            
         </div>
     );
 };

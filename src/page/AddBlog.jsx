@@ -46,8 +46,8 @@ const AddBlog = () => {
     }
 
     return (
-        <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-12'>
-            <section className='w-full p-2 md:p-6 mx-auto bg-white rounded-md shadow-md '>
+        <div className='flex justify-center items-center'>
+            <section className='w-full p-2 md:p-6 mx-auto bg-white rounded-md shadow-md min-h-screen '>
                 <h2 className='text-lg font-semibold text-gray-700 capitalize '>
                     Post a blog
                 </h2>

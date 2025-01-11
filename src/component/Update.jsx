@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 const Update = () => {
     const updateData = useLoaderData();
     const {category,imgURL,long_description,short_description,title,_id} =updateData;
+    console.log(title)
 
     const handleUpdate = async (e) => {
         e.preventDefault();

@@ -1,34 +1,42 @@
 import React from 'react';
+import { BsLinkedin } from 'react-icons/bs';
+import { FaFacebook, FaGithub } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png'
 
 const Footer = () => {
     return (
         <div>
-            <footer className="grid grid-cols-1 md:grid-cols-4 justify-center items-center gap-6 bg-base-200 text-base-content p-10 mx-auto">
-                <aside className='flex flex-col justify-center items-center'>
-                    <img className='w-16 h-16' src={logo} alt="" />
-                    <p className='text-xl font-bold'>The Blog Haven</p>
-                </aside>
-                <nav className='flex flex-col justify-center items-center'>
-                    <h6 className="footer-title">Services</h6>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
+            <footer className="justify-center bg-gray-200 items-center text-base-content p-10 text-gray-500">
+                <nav className='flex w-full flex-col space-y-2 justify-center items-center'>
+                    <div className='flex gap-2 items-center'>
+                        <div>
+                            <Link to='/'><img className='w-16 h-16' src={logo} alt="" /></Link>
+                        </div>
+                        <h6 className="font-bold text-gray-500 text-2xl">The Blog Heaven</h6>
+                    </div>
+                    <div className='flex gap-4'>
+                        <Link to='/'>Home</Link>
+                        <Link to='contact'>Contact</Link>
+                    </div>
+                    <h6 className="text-xl">Social</h6>
+                    <div className="flex gap-4 text-3xl">
+                        <div>
+                            <Link target='_blank' to='https://www.facebook.com/khokan.chakma.59360'><FaFacebook /></Link>
+                        </div>
+                        <div>
+                            <Link target='_blank' to='https://www.linkedin.com/in/khokan-chakma/'><BsLinkedin /></Link>
+                        </div>
+                        <div>
+                            <Link target='_blank' to='https://github.com/khokan784'><FaGithub /></Link>
+                        </div>
+                    </div>
                 </nav>
-                <nav className='flex flex-col justify-center items-center'>
-                    <h6 className="footer-title">Company</h6>
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
-                </nav>
-                <nav className='flex flex-col justify-center items-center'>
-                    <h6 className="footer-title">Legal</h6>
-                    <a className="link link-hover">Terms of use</a>
-                    <a className="link link-hover">Privacy policy</a>
-                    <a className="link link-hover">Cookie policy</a>
-                </nav>
+                <footer className="footer footer-center p-4">
+                    <aside>
+                        <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+                    </aside>
+                </footer>
             </footer>
         </div>
     );

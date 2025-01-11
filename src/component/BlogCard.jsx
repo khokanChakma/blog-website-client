@@ -40,20 +40,20 @@ const BlogCard = ({ blog }) => {
             <div
                 className='w-full bg-white shadow-md'
             >
-                <div className="card card-compact bg-base-100 h-[600px] w-full p-4 border shadow-xl">
-                    <figure>
+                <div className=" card-compact bg-base-100 h-[430px] rounded w-full p-4 border shadow-xl">
+                    <div className="flex justify-center items-center">
                         <img
-                            className='h-[300px]'
+                            className='h-[150px] w-[250px] md:w-full rounded'
                             src={imgURL}
                             alt="photo" />
-                    </figure>
-                    <div className="card-body">
-                        <h2 className="card-title text-2xl">{title}</h2>
-                        <p className="text-xl"><span className="text-xl font-bold">Category : </span>{category}</p>
-                        <p className="text-xl"><span className="text-xl font-bold">Short Description:</span>{short_description}</p>
+                    </div>
+                    <div className="flex flex-col space-y-1 mt-2 h-[230px]">
+                        <h2 className="card-title text-lg font-semibold">{title}</h2>
+                        <p className="text-lg">{category}</p>
+                        <p className="text-base flex-1">{short_description.slice(0,50)}.....</p>
                         <div className="card-actions">
-                            <Link to={`/blogdetails/${_id}`} className="btn btn-primary bg-[#70009a] border-none">Details</Link>
-                            <button onClick={handleWishlist} className="btn btn-primary bg-[#de6800] border-none">Wishlist</button>
+                            <Link to={`/blogdetails/${_id}`} className="btn btn-primary text-white bg-[#01b3bf] border-none">Details</Link>
+                            <button onClick={handleWishlist} className="btn btn-primary bg-[#01b3bf] text-white border-none">Wishlist</button>
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,7 @@ import Newsletter from "../component/Newsletter";
 import RecentBlog from "../component/RecentBlog";
 import Ingredients from "../component/Ingredients";
 import FaqQuestion from "../component/FaqQuestion";
+import Contact from "../component/Contact";
 
 const Home = () => {
     const handleSubmit = (e) => {
@@ -23,14 +24,16 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <RecentBlog></RecentBlog>
-            <div className="py-8 bg-[#eaeaea] ">
-                <h2 className="text-2xl text-[#f97c0f] font-bold text-center py-4 mb-4">FAQ Questions</h2>
+            <div>
                 <FaqQuestion></FaqQuestion>
             </div>
-            <div className="bg-[#f1f1f1] py-8">
+            <div>
                 <Ingredients></Ingredients>
             </div>
-            <div className="bg-[#008aca] py-8">
+            <div>
+                <Contact></Contact>
+            </div>
+            <div>
                 <Newsletter handleSubmit={handleSubmit}></Newsletter>
             </div>
 
