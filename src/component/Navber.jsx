@@ -7,7 +7,7 @@ import Theme from "../Theme/Theme";
 const Navber = () => {
     const { user, logOut } = useContext(AuthContext);
     return (
-        <div className="fixed w-full bg-gray-300 z-20">
+        <div className="fixed w-full bg-gray-200 z-20 backdrop-blur-xl">
             <div className="navbar container mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
