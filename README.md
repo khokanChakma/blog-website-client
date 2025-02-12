@@ -1,6 +1,9 @@
 <h2>Project Name:</h2>
  Blog Website
-<h2>Assignment Category: 5</h2>
+
+ <div align="center">
+  <img height="300" src="https://i.ibb.co.com/R4kKrZcY/blog-post.jpg"  />
+</div>
 
 
 <h2>Description The Project Purpose: </h2>
