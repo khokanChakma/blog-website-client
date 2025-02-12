@@ -58,7 +58,7 @@ const BlogDetails = () => {
 
 
     return (
-        <div>
+        <div className="">
             <h2 className="text-3xl font-bold text-center py-4">Blog Details</h2>
             <div className="flex flex-col lg:flex-row gap-6 p-6 bg-base-200 rounded-xl shadow-xl w-10/12 mx-auto">
                 <img
